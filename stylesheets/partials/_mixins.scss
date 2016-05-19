@@ -1,0 +1,108 @@
+@mixin border-box {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+@mixin transition ($name, $duration, $delay, $ease) {
+	-webkit-transition: ($name) ($duration) ($delay) ($ease);
+	-moz-transition:    ($name) ($duration) ($delay) ($ease);
+	transition:     ($name) ($duration) ($delay) ($ease);
+}
+@mixin animation ($-a-name, $-a-duration, $-a-loop, $-a-ease) {
+	-webkit-animation: ($-a-name) ($-a-duration) ($-a-loop) ($-a-ease);
+	-moz-animation:    ($-a-name) ($-a-duration) ($-a-loop) ($-a-ease);
+	animation:     ($-a-name) ($-a-duration) ($-a-loop) ($-a-ease);
+}
+@mixin transform ($transform) {
+	-webkit-transform: ($transform);
+	-moz-transform:    ($transform);
+	transform:     ($transform);
+}
+@mixin box-shadow ($box-shadow) {
+	-webkit-box-shadow: ($box-shadow);
+	-moz-box-shadow:    ($box-shadow);
+	box-shadow:     ($box-shadow);
+}
+@mixin border-radius ($border-radius) {
+	-webkit-border-radius: ($border-radius);
+	-moz-border-radius:    ($border-radius);
+	border-radius:     ($border-radius);
+}
+@mixin border-bottom-left-radius ($border-bottom-left-radius) {
+	-webkit-border-bottom-left-radius: ($border-bottom-left-radius);
+	-moz-border-bottom-left-radius:    ($border-bottom-left-radius);
+	border-bottom-left-radius:     ($border-bottom-left-radius);
+}
+@mixin border-bottom-right-radius ($border-bottom-right-radius) {
+	-webkit-border-bottom-right-radius: ($border-bottom-right-radius);
+	-moz-border-bottom-right-radius:    ($border-bottom-right-radius);
+	border-bottom-right-radius:     ($border-bottom-right-radius);
+}
+@mixin border-top-left-radius ($border-top-left-radius) {
+	-webkit-border-top-left-radius: ($border-top-left-radius);
+	-moz-border-top-left-radius:    ($border-top-left-radius);
+	border-top-left-radius:     ($border-top-left-radius);
+}
+@mixin border-top-right-radius ($border-top-right-radius) {
+	-webkit-border-top-right-radius: ($border-top-right-radius);
+	-moz-border-top-right-radius:    ($border-top-right-radius);
+	border-top-right-radius:     ($border-top-right-radius);
+}
+@mixin vertical-align {
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+@mixin center-align {
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate3d(-50%,-50%,0);
+	-ms-transform: translate3d(-50%,-50%,0);
+	transform: translate3d(-50%,-50%,0);
+}
+
+// vertical align
+
+@mixin vertical-align ($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
+// media mixins
+// note: it is desktop first
+$sm-em:              "only screen and (max-width: 568px)";                // ≥ 568px
+$md-em:             "only screen and (max-width: 768px)";    // ≥ 768px
+$lg-em:                 "only screen and (max-width: 1024px) ";   // ≥ 1024px
+$xl-em:                 "only screen and (max-width: 1280px)";    // ≥ 1280px
+
+
+
+@mixin grid-sm {
+  @media #{$sm-em} {
+    @content;
+  }
+}
+
+@mixin grid-md {
+  @media #{$md-em} {
+    @content;
+  }
+}
+
+@mixin grid-lg {
+  @media #{$lg-em} {
+    @content;
+  }
+}
+
+@mixin grid-xl {
+  @media #{$xl-em} {
+    @content;
+  }
+}
+

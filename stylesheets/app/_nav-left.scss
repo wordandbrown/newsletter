@@ -1,0 +1,90 @@
+.nav-up {
+	nav#left {
+		position: fixed;
+		//top: $header + $nav-offset;
+	}
+}
+
+
+nav#left {
+	position: fixed;
+    background: rgba(white, .5);
+    //background: #222;
+	top: 0;
+	left: 0;
+    height: 100%;
+    width: auto;
+    z-index: 2000;
+    width: $nav-left-width;
+    padding: 10px 0;
+    @include border-box;
+    -webkit-transform: translate3d(0,0,0);
+    @include grid-lg {
+        left: -$nav-left-width;
+        @include transition(transform, .3s, 0s, ease-in-out);
+        &.active-nav {
+            @include transform(translate3d($nav-left-width, 0, 0));
+        }
+    }
+    #logo {
+        padding: 30px;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        position: relative;
+        z-index: 1001;
+        display: block;
+        text-decoration: none;
+        h1 {
+            height: $logo;
+            line-height: $logo;
+            font-size: $logo - 5;
+            font-weight: 100;
+            font-family: 'Roboto Condensed', sans-serif;
+            color: $c-primary;
+        }
+        h2 {
+            height: $logo;
+            line-height: $logo - 16;
+            font-size: $logo - 22;
+            margin-top: 10px;
+            //margin: 10px 20px;
+            font-weight: 100;
+            font-family: 'Roboto Condensed', sans-serif;
+            color: $c-primary;
+        }
+    }
+    li {
+        width: auto;
+        padding: 0 30px;
+        position: relative;
+        @include transition(background, .3s, 0s, ease-in-out);
+        @include border-box;
+        cursor: pointer;
+        &#curr-month {
+            h2 {
+                color: $c-primary-red;
+            }
+            &:hover {
+                background: rgba($c-primary, 0);
+                @include transition(background, .3s, 0s, ease-in-out);
+            }
+
+        }
+        &:hover {
+            background: rgba($c-primary, 0.1);
+            @include transition(background, .3s, 0s, ease-in-out);
+            h2 {
+                color: black;
+            }
+        }
+        h2 {
+            color: $c-primary;
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 36px;
+            text-align: left;
+            width: 100%;
+        }
+    }
+}
