@@ -1,98 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i');
 
 
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic,100,100italic,300,300italic,500,500italic,700,700italic);
-@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400italic,100,100italic,300,300italic,500,500italic,700,700italic);
+/////////////////////////////////////////////////////////////////////////////
+// FONTS
+/////////////////////////////////////////////////////////////////////////////
 
-$f-content: 'Roboto', sans-serif;
-$f-normal: 400;
-$f-light: $f-normal - 100;
-$f-bold: $f-normal + 200;
+//$font-family-header: 'Oswald', sans-serif;
+$font-family-header: 'Roboto Condensed', sans-serif;
+$font-family-body: 'Roboto', sans-serif;
 
-* {
-	font-family: $f-content;
-	font-weight: $f-normal;
-	line-height: 1.2em;
-	b, strong {
-		font-weight: $f-bold;
-	}
+// We use these to define default font stacks
+$font-family-sans-serif: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !default;
+$font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif !default;
+$font-family-monospace: Consolas, "Liberation Mono", Courier, monospace !default;
+
+// We use these to define default font weights
+$font-weight-normal: normal !default;
+$font-weight-bold: bold !default;
+
+////////////////////////////////////////////////////////////////////////////
+// BODY
+////////////////////////////////////////////////////////////////////////////
+
+html * {
+	font-family: $font-family-body;
+	letter-spacing: normal;
+	font-weight: 300;
 }
 
+h1 {
+	font-size: 2.0em;
+	font-family: $font-family-header;
+	font-weight: 700;
+}
 
+h2 {
+	font-size: 1.6em;
+	font-family: $font-family-header;
+	font-weight: 300;
+}
 
+h3 {
+	font-family: $font-family-header;
+	//text-transform: uppercase;
+	font-weight: 300;
+}
 
-// h1, h2, h3, h4, h5, h6{
-// 	font:{
-// 		family: $f-content;
-// 		weight: $f-normal;
-// 	}
-// 	color: $c-primary-alt;
-// }
-// h1 {
-// 	font: {
-// 		family: $f-header;
-// 		weight: $f-normal;
-// 	}
-// }
-// p{
-// 	font:{
-// 		family: $f-content;
-// 		weight: $f-normal;
-// 		size: $f-basesize;
-// 	}
-// 	color: $c-bodycopy;
-// 	line-height: 1.6em;
-// }
-// a{
-// 	text-decoration: none;
-// 	&:hover{
-// 		color: darken($c-accent, 20%);
-// 	}
-// 	&.active{
-// 		color: $c-accent;
-// 	}
-// }
-// ul.list-disc {
-// 	li {
-// 		list-style: disc outside;
-// 	}
-// }
-// ul.list-circle {
-// 	li {
-// 		list-style: circle outside;
-// 	}
-// }
-// ul.list-square {
-// 	li {
-// 		list-style: square outside;
-// 	}
-// }
-// #main ul {
-// 	margin-left: 20px;
-// 	li {
-// 		padding: 5px 0;
-// 	}
-// }
+h4, h5, h6 {
+  font-family: $font-family-header;
+  font-weight: 300;
+}
 
-// #main ul.list-nested {
-// 	margin-left: 0;
-// 	li {
-// 		font-weight: $f-bold;
-// 	}
-// 	ul {
-// 		margin-left: 30px;
-// 		li {
-// 			font-weight: $f-normal;
-// 		}
-// 	}
-// }
-
-// .home {
-// 	h1 {
-// 		font: {
-// 			size: 360%;
-// 		}
-// 		padding-bottom: 50px;
-// 		text-align: center;
-// 	}
-// }
-
+p {margin-bottom: 1.0em; line-height: 1.2em}

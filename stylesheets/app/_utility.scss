@@ -1,0 +1,43 @@
+ul.compactList {
+	li {
+		padding-bottom: 8px !important;
+	}
+}
+
+.callout {
+    margin: 0 0 1rem 0;
+    padding: 1rem;
+    border: 1px solid rgba(10, 10, 10, 0.25);
+    border-radius: 0;
+    position: relative;
+    color: #0a0a0a;
+    background-color: white;
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 8px solid #ccc;
+  margin: 1.5em 10px 1.5em 0px;
+  display: block;
+  padding: 15px 20px 15px 45px;
+  margin: 34px 0 4px;
+  position: relative;
+
+  &:before {
+    color: #ccc;
+    content: "\201C"; /*Unicode for Left Double Quote*/
+    font-family: Georgia, serif;
+    font-size: 54px;
+    font-weight: bold;
+    
+    /*Positioning*/
+    position: absolute;
+    left: 10px;
+    top: 20px;
+  }
+
+  + p {
+    text-align: right;
+  }
+
+}

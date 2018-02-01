@@ -1,44 +1,56 @@
-<nav class="dots">
-    <div class="nav-wrapper">
-        <ul class="nav">
+<nav class="right">
 
-<?php
-while ( have_posts() ) : the_post(); ?>
 
-    <?php
+<?php if (have_posts()) : while (have_posts()) : the_post(); $current_post = get_the_ID(); ?>
 
-        $fields = get_fields();
+<?php endwhile; endif; ?>
 
-        if( $fields )
-        {
-            foreach( $fields as $field_name => $value )
-            {
-                // get_field_object( $field_name, $post_id, $options )
-                // - $value has already been loaded for us, no point to load it again in the get_field_object function
-                $field = get_field_object($field_name, false, array('load_value' => false));
 
-                $currfiels = get_field($field_name);
 
-                if ($currfiels) {
+    <?php $myPosts = new WP_Query( 'posts_per_page = 50' ); while ( $myPosts-> have_posts() ) : $myPosts-> the_post(); ?>
 
-                echo '<li>';
-                    echo '<a href="#' . $field_name . '"><span>' . $field['label'] . '</span></a>';
-                echo '</li>';
+        <?php if (in_category('newsletter') ) : ?>
 
-                }
-            }
-        }
 
-    ?>
 
-<?php
-endwhile; // End of the loop.
-?>
+            <?php if ( $post->ID == $current_post ) { ?>
+                <div id="curr-month-top" onclick="window.location='<?php the_permalink(); ?>'" ><h2><?php the_title(); ?></h2></div>
+            <?php } ?>
 
-        </ul>
-    </div>
+
+                
+       
+        <?php endif; ?>      
+
+    <?php endwhile; // end of the loop. ?>
+    
+    <ul>
+
+
+
+    <?php $myPosts = new WP_Query( 'posts_per_page = 50' ); while ( $myPosts-> have_posts() ) : $myPosts-> the_post(); ?>
+
+        <?php if (in_category('newsletter') ) : ?>
+
+
+
+            <?php if ( $post->ID == $current_post ) { ?>
+                <li id="curr-month" onclick="window.location='<?php the_permalink(); ?>'" ><h2><?php the_title(); ?></h2></li>
+            <?php } else { ?>
+                <li onclick="window.location='<?php the_permalink(); ?>'" ><h2><?php the_title(); ?></h2></li>
+            <?php } ?>
+
+
+                
+       
+        <?php endif; ?>      
+
+    <?php endwhile; // end of the loop. ?>
+    
+
+    </ul>
+    
 </nav>
-
 
 <!-- <nav class="dots">
     <div class="nav-wrapper">

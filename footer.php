@@ -3,13 +3,14 @@
 <footer>
     <p>IT Newsletter | People Strategies</p>
 </footer>
-
+</div><!-- .wrapper -->
 </div> <!-- .main-wrapper -->
 
 
 <div class="loader">
 </div>
 
+<?php wp_footer(); ?>
 
 <!-- javascript
 ================================================== -->
@@ -21,6 +22,24 @@
 <script src="<?php echo get_template_directory_uri() ?>/js/bootstrap-scrollspy.js"></script>
 <script src="<?php echo get_template_directory_uri() ?>/js/nav.js"></script>
 <script src="<?php echo get_template_directory_uri() ?>/js/loader.js"></script>
+<script src="<?php echo get_template_directory_uri() ?>/js/readmore.js"></script>
+
+<?php
+if ( is_wpe() ):
+?>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84535878-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<?php endif; ?>
 
 </body>
 </html>

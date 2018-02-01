@@ -9,14 +9,15 @@
 nav#left {
 	position: fixed;
     background: rgba(white, .5);
-    //background: #222;
+
+    background: #e6e6e6;
 	top: 0;
 	left: 0;
     height: 100%;
     width: auto;
-    z-index: 2000;
+    z-index: 100;
     width: $nav-left-width;
-    padding: 10px 0;
+    padding: 0;
     @include border-box;
     -webkit-transform: translate3d(0,0,0);
     @include grid-lg {
@@ -27,7 +28,7 @@ nav#left {
         }
     }
     #logo {
-        padding: 30px;
+        padding: 20px;
         z-index: 1;
         top: 0;
         left: 0;
@@ -38,10 +39,10 @@ nav#left {
         h1 {
             height: $logo;
             line-height: $logo;
-            font-size: $logo - 5;
-            font-weight: 100;
+            font-size: 30px;
+            font-weight: 300;
             font-family: 'Roboto Condensed', sans-serif;
-            color: $c-primary;
+            color: $c-primary-red;
         }
         h2 {
             height: $logo;
@@ -49,42 +50,23 @@ nav#left {
             font-size: $logo - 22;
             margin-top: 10px;
             //margin: 10px 20px;
-            font-weight: 100;
+            font-weight: 700;
             font-family: 'Roboto Condensed', sans-serif;
             color: $c-primary;
         }
     }
-    li {
-        width: auto;
-        padding: 0 30px;
-        position: relative;
-        @include transition(background, .3s, 0s, ease-in-out);
-        @include border-box;
-        cursor: pointer;
-        &#curr-month {
-            h2 {
-                color: $c-primary-red;
+    #people-strategies {
+        position: absolute;
+        bottom: 20px;
+        right: 10px;
+        text-align: right;
+        svg {
+            width: 50%;
+            height: auto;
+            path {
+                fill: rgba($c-primary-red,1);
+                fill: rgba(0,0,0,0.2);
             }
-            &:hover {
-                background: rgba($c-primary, 0);
-                @include transition(background, .3s, 0s, ease-in-out);
-            }
-
-        }
-        &:hover {
-            background: rgba($c-primary, 0.1);
-            @include transition(background, .3s, 0s, ease-in-out);
-            h2 {
-                color: black;
-            }
-        }
-        h2 {
-            color: $c-primary;
-            font-weight: 300;
-            font-size: 18px;
-            line-height: 36px;
-            text-align: left;
-            width: 100%;
         }
     }
 }

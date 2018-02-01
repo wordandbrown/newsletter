@@ -12,10 +12,11 @@
 
 <div class="main-wrapper">
 
-<header id="hero">
+<!-- <header id="hero">
     <div id="logo"><img src="<?php echo get_template_directory_uri() ?>/images/assets/logo.svg" alt="People Strategies"></div>
-</header>
+</header> -->
 
 <div id="menu-icon">
     <span></span>
 </div>
+<?php wp_head(); ?>

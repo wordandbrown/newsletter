@@ -1,7 +1,7 @@
 
 
 var images = [
-            templateUrl + "/images/ad/001.jpg"
+            templateUrl + "/images/hero/001.jpg"
     ]; 
     var imageCount = images.length;
     var imagesLoaded = 0;
